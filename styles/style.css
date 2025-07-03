@@ -1,0 +1,91 @@
+:where([class^="ri-"])::before {
+	content: "\f3c2";
+}
+body {
+	font-family: "Inter", sans-serif;
+	scroll-behavior: smooth;
+}
+.hero-section {
+	background-image: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 0.7) 0%,
+			rgba(0, 0, 0, 0.5) 40%,
+			rgba(0, 0, 0, 0) 100%
+		),
+		url("https://readdy.ai/api/search-image?query=A%20powerful%20yellow%20excavator%20on%20a%20construction%20site%20with%20a%20dramatic%20sky%20in%20the%20background.%20The%20image%20shows%20the%20machinery%20from%20a%20low%20angle%2C%20emphasizing%20its%20size%20and%20power.%20The%20left%20side%20of%20the%20image%20has%20a%20clean%2C%20gradient%20background%20that%20transitions%20smoothly%20to%20the%20machinery%20on%20the%20right.%20Professional%20lighting%2C%20high%20detail%2C%20photorealistic&width=1920&height=1080&seq=12345&orientation=landscape");
+	background-size: cover;
+	background-position: center right;
+}
+.product-card:hover .product-description {
+	opacity: 1;
+}
+.custom-scrollbar::-webkit-scrollbar {
+	height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: #f1f1f1;
+	border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+	background: #ff6b35;
+	border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+	background: #e55a2a;
+}
+.tab-content {
+	display: none;
+}
+.tab-content.active {
+	display: block;
+}
+.gallery-item {
+	transition: all 0.3s ease;
+}
+.gallery-item:hover {
+	transform: scale(1.02);
+}
+.custom-checkbox {
+	position: relative;
+	padding-left: 2rem;
+	cursor: pointer;
+}
+.custom-checkbox input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1.25rem;
+	width: 1.25rem;
+	background-color: #fff;
+	border: 2px solid #d1d5db;
+	border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+	border-color: #ff6b35;
+}
+.custom-checkbox input:checked ~ .checkmark {
+	background-color: #ff6b35;
+	border-color: #ff6b35;
+}
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+	display: block;
+}
+.custom-checkbox .checkmark:after {
+	left: 0.4rem;
+	top: 0.2rem;
+	width: 0.3rem;
+	height: 0.6rem;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
