@@ -13,6 +13,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
             rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+
         <link rel="stylesheet" href="./styles/style.css">
     </head>
 
@@ -20,23 +22,50 @@
         <!-- Navigation -->
         <nav class="bg-white shadow-sm fixed w-full z-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16">
+                <div class="flex justify-between h-16 items-center">
+                    <!-- Logo -->
                     <div class="flex items-center">
                         <a href="./index.html" class="text-2xl font-['Pacifico'] text-primary">logo</a>
                     </div>
+
+                    <!-- Desktop Menu -->
                     <div class="hidden md:flex items-center space-x-8">
-                        <div class="flex space-x-6">
-                            <a href="#" class="text-gray-700 hover:text-primary font-medium">Products</a>
+                        <div class="flex space-x-6 items-center">
                             <a href="#" class="text-gray-700 hover:text-primary font-medium">Solutions</a>
                             <a href="#" class="text-gray-700 hover:text-primary font-medium">Services</a>
+                            <!-- Products Dropdown -->
+                            <div class="relative group">
+                                <button
+                                    class="flex items-center text-gray-700 hover:text-primary font-medium transition">
+                                    Products
+                                    <i
+                                        class="ri-arrow-down-s-line ml-1 transition-transform duration-200 group-hover:rotate-180"></i>
+                                </button>
+                                <div
+                                    class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transform -translate-y-2 transition-all duration-300 z-50">
+                                    <a href="#"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">Excavators</a>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">Bulldozers</a>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">Cranes</a>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg">Concrete
+                                        Equipment</a>
+                                </div>
+                            </div>
+
+
                             <a href="./pages/about.html" class="text-gray-700 hover:text-primary font-medium">About</a>
                             <a href="./pages/contact.html"
                                 class="text-gray-700 hover:text-primary font-medium">Contact</a>
                         </div>
+
+                        <!-- Search + Quote Button -->
                         <div class="flex items-center space-x-4">
                             <div class="relative">
                                 <input type="text" placeholder="Search"
-                                    class="pl-10 pr-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm">
+                                    class="pl-10 pr-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-sm" />
                                 <div
                                     class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
                                     <i class="ri-search-line"></i>
@@ -48,14 +77,48 @@
                             </button>
                         </div>
                     </div>
+
+                    <!-- Mobile Toggle Button -->
                     <div class="md:hidden flex items-center">
-                        <button class="text-gray-500 w-10 h-10 flex items-center justify-center">
-                            <i class="ri-menu-line text-2xl"></i>
+                        <button id="mobile-menu-toggle"
+                            class="text-gray-500 w-10 h-10 flex items-center justify-center focus:outline-none">
+                            <i id="menu-icon" class="ri-menu-line text-2xl"></i>
                         </button>
                     </div>
                 </div>
             </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu"
+                class="md:hidden hidden flex-col space-y-2 bg-white px-4 py-4 border-t border-gray-200 shadow-sm">
+
+                <!-- Products with Mobile Dropdown -->
+                <div>
+                    <button id="mobile-products-toggle"
+                        class="w-full flex justify-between items-center text-gray-700 hover:text-primary font-medium">
+                        Products
+                        <i id="mobile-products-icon"
+                            class="ri-arrow-down-s-line ml-1 transition-transform duration-200"></i>
+                    </button>
+                    <div id="mobile-products-menu" class="hidden pl-4 mt-2 flex flex-col space-y-1">
+                        <a href="#" class="text-gray-700 hover:text-primary">Excavators</a>
+                        <a href="#" class="text-gray-700 hover:text-primary">Bulldozers</a>
+                        <a href="#" class="text-gray-700 hover:text-primary">Cranes</a>
+                        <a href="#" class="text-gray-700 hover:text-primary">Concrete Equipment</a>
+                    </div>
+                </div>
+
+                <a href="#" class="block text-gray-700 hover:text-primary font-medium">Solutions</a>
+                <a href="#" class="block text-gray-700 hover:text-primary font-medium">Services</a>
+                <a href="./pages/about.html" class="block text-gray-700 hover:text-primary font-medium">About</a>
+                <a href="./pages/contact.html" class="block text-gray-700 hover:text-primary font-medium">Contact</a>
+                <button
+                    class="bg-primary text-white px-4 py-2 rounded-button font-medium hover:bg-opacity-90 transition w-full">
+                    Request Quote
+                </button>
+            </div>
         </nav>
+
 
         <!-- Hero Section -->
         <section class="hero-section h-screen flex items-center pt-16">
@@ -736,7 +799,7 @@
                         </div>
                     </div>
 
-                    <div class="p-6 bg-gray-50 border-t border-gray-200">
+                    <!-- <div class="p-6 bg-gray-50 border-t border-gray-200">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
                                 <div
@@ -752,7 +815,7 @@
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -1153,106 +1216,7 @@
             </div>
         </footer>
 
-        <script id="carousel-script">
-            document.addEventListener('DOMContentLoaded', function () {
-                const carousel = document.getElementById('product-carousel')
-                const prevBtn = document.getElementById('prev-btn')
-                const nextBtn = document.getElementById('next-btn')
-
-                let scrollAmount = 0
-                const cardWidth = 320 // Width of each card + gap
-
-                nextBtn.addEventListener('click', function () {
-                    scrollAmount += cardWidth
-                    if (scrollAmount > carousel.scrollWidth - carousel.clientWidth) {
-                        scrollAmount = carousel.scrollWidth - carousel.clientWidth
-                    }
-                    carousel.scrollTo({
-                        left: scrollAmount,
-                        behavior: 'smooth'
-                    })
-                })
-
-                prevBtn.addEventListener('click', function () {
-                    scrollAmount -= cardWidth
-                    if (scrollAmount < 0) {
-                        scrollAmount = 0
-                    }
-                    carousel.scrollTo({
-                        left: scrollAmount,
-                        behavior: 'smooth'
-                    })
-                })
-            });
-        </script>
-
-        <script id="tabs-script">
-            document.addEventListener('DOMContentLoaded', function () {
-                const tabButtons = document.querySelectorAll('.tab-button')
-                const tabContents = document.querySelectorAll('.tab-content')
-
-                tabButtons.forEach(button => {
-                    button.addEventListener('click', function () {
-                        // Remove active class from all buttons and contents
-                        tabButtons.forEach(btn => {
-                            btn.classList.remove('active')
-                            btn.classList.remove('text-gray-900')
-                            btn.classList.remove('border-primary')
-                            btn.classList.add('text-gray-500')
-                            btn.classList.add('border-transparent')
-                        })
-
-                        tabContents.forEach(content => {
-                            content.classList.remove('active')
-                        })
-
-                        // Add active class to clicked button and corresponding content
-                        this.classList.add('active')
-                        this.classList.add('text-gray-900')
-                        this.classList.add('border-primary')
-                        this.classList.remove('text-gray-500')
-                        this.classList.remove('border-transparent')
-
-                        const tabId = this.getAttribute('data-tab')
-                        document.getElementById(tabId).classList.add('active')
-                    })
-                })
-            });
-        </script>
-
-        <script id="gallery-script">
-            document.addEventListener('DOMContentLoaded', function () {
-                const filterButtons = document.querySelectorAll('.gallery-filter')
-                const galleryItems = document.querySelectorAll('.gallery-item')
-
-                filterButtons.forEach(button => {
-                    button.addEventListener('click', function () {
-                        const filterValue = this.getAttribute('data-filter')
-
-                        // Remove active class from all buttons
-                        filterButtons.forEach(btn => {
-                            btn.classList.remove('active')
-                            btn.classList.remove('text-gray-900')
-                            btn.classList.add('text-gray-500')
-                        })
-
-                        // Add active class to clicked button
-                        this.classList.add('active')
-                        this.classList.add('text-gray-900')
-                        this.classList.remove('text-gray-500')
-
-                        // Filter gallery items
-                        galleryItems.forEach(item => {
-                            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                                item.style.display = 'block'
-                            } else {
-                                item.style.display = 'none'
-                            }
-                        })
-                    })
-                })
-            });
-        </script>
+        <script src="./main.js"></script>
     </body>
 
 </html>
